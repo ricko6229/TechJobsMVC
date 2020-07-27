@@ -1,23 +1,36 @@
 ﻿
-using CodingEvents.Demo.Model
-
-<div class="List body-content">
+<div class="container body-content">
 
     <h1>@ViewBag.title</h1>
+    @foreach (var job in ViewBag.jobs)
+        {
+    <table class ="job-listing">
+       
+        <tr>
+            <th>ID:</th><td>@job.Id</td>
+        </tr>
 
-    <table class="job-listing">
         <tr>
-            <JobField>
-            @foreach(var job in ViewBag.tableChoices){
-            <td>job.key</td>
-            <td>job.Value</td>
+            <th>Name:</th><td>@job.Name</td>
+        </tr>
+        <tr>
+            <th>Employer:</th><td>@job.Employer</td>
+        </tr>
+        <tr>
+            <th>Location:</th><td>@job.Location</td>
+        </tr>
+        <tr>
+            <th>Position Type:</th><td>@job.PositionType</td>
+        </tr>
+        <tr>
+            <th>Skill:</th><td>@job.CoreCompetency</td>    
+        </tr>
+
+    </table>
         }
-        <tr>
-    </table>    
-        @{
+    @{
         //TODO #1: Use a loop to display job results in a table.
     }
-
 
 
 </div>
